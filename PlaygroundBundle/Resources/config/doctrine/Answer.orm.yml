@@ -1,0 +1,39 @@
+Oras\PlaygroundBundle\Entity\Answer:
+    type: entity
+    table: answers
+    indexes:
+        fk_answers_questions1_idx:
+            columns:
+                - questions_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+               strategy: IDENTITY
+    fields:
+        value:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        createdAt:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: created_at
+    manyToOne:
+        question:
+            targetEntity: Question
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                questions_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

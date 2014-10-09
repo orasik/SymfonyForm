@@ -1,0 +1,124 @@
+<?php
+
+namespace Oras\PlaygroundBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Answers
+ */
+class Answers
+{
+    /**
+     * @var string
+     */
+    private $value;
+
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \Oras\PlaygroundBundle\Entity\Questions
+     */
+    private $questions;
+
+
+    /**
+     * Set value
+     *
+     * @param string $value
+     * @return Answers
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get value
+     *
+     * @return string 
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Answers
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Answers
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set questions
+     *
+     * @param \Oras\PlaygroundBundle\Entity\Questions $questions
+     * @return Answers
+     */
+    public function setQuestions(\Oras\PlaygroundBundle\Entity\Questions $questions)
+    {
+        $this->questions = $questions;
+
+        return $this;
+    }
+
+    /**
+     * Get questions
+     *
+     * @return \Oras\PlaygroundBundle\Entity\Questions 
+     */
+    public function getQuestions()
+    {
+        return $this->questions;
+    }
+}

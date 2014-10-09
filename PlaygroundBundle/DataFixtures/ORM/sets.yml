@@ -1,0 +1,23 @@
+Oras\PlaygroundBundle\Entity\Question:
+   question1:
+       label: 'question 1'
+       questionType: 'select'
+   question2:
+       label: 'question 2'
+       questionType: 'text'
+
+Oras\PlaygroundBundle\Entity\Set:
+   set1:
+       name: 'Set 1'
+       questions: [@question1, @question2]
+   set2:
+       name: 'Set 2'
+
+Oras\PlaygroundBundle\Entity\Answer:
+   anwer1:
+       value: 'First Answer'
+       question: @question1
+   answer2:
+       value: 'Second Answer'
+       question: @question1
+

@@ -1,0 +1,4 @@
+services:
+#    oras_playground.example:
+#        class: Oras\PlaygroundBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

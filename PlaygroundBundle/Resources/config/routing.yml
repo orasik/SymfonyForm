@@ -1,0 +1,6 @@
+oras_playground_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: OrasPlaygroundBundle:Default:index }
+oras_playground_form:
+    path:     /form
+    defaults: { _controller: OrasPlaygroundBundle:Default:form }

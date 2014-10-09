@@ -1,0 +1,156 @@
+<?php
+
+namespace Oras\PlaygroundBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Questions
+ */
+class Questions
+{
+    /**
+     * @var string
+     */
+    private $label;
+
+    /**
+     * @var integer
+     */
+    private $questionType;
+
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $sets;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->sets = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set label
+     *
+     * @param string $label
+     * @return Questions
+     */
+    public function setLabel($label)
+    {
+        $this->label = $label;
+
+        return $this;
+    }
+
+    /**
+     * Get label
+     *
+     * @return string 
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * Set questionType
+     *
+     * @param integer $questionType
+     * @return Questions
+     */
+    public function setQuestionType($questionType)
+    {
+        $this->questionType = $questionType;
+
+        return $this;
+    }
+
+    /**
+     * Get questionType
+     *
+     * @return integer 
+     */
+    public function getQuestionType()
+    {
+        return $this->questionType;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Questions
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add sets
+     *
+     * @param \Oras\PlaygroundBundle\Entity\Sets $sets
+     * @return Questions
+     */
+    public function addSet(\Oras\PlaygroundBundle\Entity\Sets $sets)
+    {
+        $this->sets[] = $sets;
+
+        return $this;
+    }
+
+    /**
+     * Remove sets
+     *
+     * @param \Oras\PlaygroundBundle\Entity\Sets $sets
+     */
+    public function removeSet(\Oras\PlaygroundBundle\Entity\Sets $sets)
+    {
+        $this->sets->removeElement($sets);
+    }
+
+    /**
+     * Get sets
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSets()
+    {
+        return $this->sets;
+    }
+}

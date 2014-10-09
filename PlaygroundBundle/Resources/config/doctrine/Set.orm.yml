@@ -1,0 +1,37 @@
+Oras\PlaygroundBundle\Entity\Set:
+    type: entity
+    table: sets
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+    manyToMany:
+        questions:
+            targetEntity: Question
+            cascade: {  }
+            mappedBy: null
+            inversedBy: sets
+            joinTable:
+                name: sets_has_questions
+                joinColumns:
+                    -
+                        name: sets_id
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: questions_id
+                        referencedColumnName: id
+            orderBy: null
+    lifecycleCallbacks: {  }
